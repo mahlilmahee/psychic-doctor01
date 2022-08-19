@@ -9,6 +9,7 @@ import Home from './pages/Home/Shared/Home';
 import None from './pages/Home/None';
 import Contact from './pages/Contact';
 import About from './pages/About';
+import Login from './pages/Login';
 function App() {
   return (
     <div className="App">
@@ -23,14 +24,15 @@ function App() {
        </Route>
       <Route path="/about" element={<About />}>
        </Route>
+      <Route path="/login" element={<Login/>}>
+       </Route>
       <Route path="*" element={<None />}>
        </Route>
      
       
     </Routes>
 
-      <br/>
-     <button class="btn btn-primary">One</button>
+  
     </div>
   );
 }
