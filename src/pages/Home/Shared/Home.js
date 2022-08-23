@@ -1,7 +1,8 @@
 import React from 'react';
+import Backgroundima from '../Backgroundima';
 import Banner from '../Banner';
 import Info from '../Info';
-import Doctorman from './Doctorman';
+// import Doctorman from './Doctorman';
 import Bigservice from './Service/Bigservice';
 import ServiceCard from './Service/ServiceCard';
 import Services from './Service/Services';
@@ -14,7 +15,7 @@ const Home = () => {
            <Services></Services>
            <ServiceCard></ServiceCard>
            <Bigservice></Bigservice>
-         
+          <Backgroundima></Backgroundima>
         </div>
     );
 };
