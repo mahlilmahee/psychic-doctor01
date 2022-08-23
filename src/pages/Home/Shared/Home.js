@@ -14,7 +14,7 @@ const Home = () => {
            <Services></Services>
            <ServiceCard></ServiceCard>
            <Bigservice></Bigservice>
-           {/* <Doctorman></Doctorman>  */}
+         
         </div>
     );
 };
