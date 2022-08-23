@@ -1,0 +1,21 @@
+.contact{
+    background-image: url('../../assets/images/appointment.png')
+}
+input{
+     color:red;
+     border: rgb(56, 149, 236) 2px solid;
+     margin-bottom: 1px;
+     margin-top: 1px;
+     border-radius:10px;
+     text:black;
+     width:30%;
+     padding:2px
+}
+textarea{
+    width:30%;
+    height:40%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius:10px;
+    
+}
