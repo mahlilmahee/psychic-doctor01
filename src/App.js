@@ -10,6 +10,8 @@ import None from './pages/Home/None';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Login from './pages/Login';
+import Appoinment from './pages/Home/Appoinment/Appoinment';
+// import Appoinment from './pages/Home/Appoinment';
 function App() {
   return (
     <div className="App">
@@ -23,6 +25,8 @@ function App() {
       <Route path="/contact" element={<Contact />}>
        </Route>
       <Route path="/about" element={<About />}>
+       </Route>
+      <Route path="/appoinment" element={<Appoinment />}>
        </Route>
       <Route path="/login" element={<Login/>}>
        </Route>

@@ -1,0 +1,68 @@
+[
+    {
+        "_id":1, 
+        "name":"Teeth Orthsome", 
+        "slots":[
+            "8.00 AM -8.30 AM",
+            "8.30 AM -9.00 AM",
+            "9.00 AM -9.30 AM",
+            "9300 AM -10.00 AM",
+            "10.00 AM -10.30 AM",
+            "10.30 AM -11.00 AM"
+        ]
+    },
+    {
+        "_id":2, 
+        "name":"Teeth surgery", 
+        "slots":[
+            "8.00 AM -8.30 AM",
+            "8.30 AM -9.00 AM",
+            "9.00 AM -9.30 AM",
+            "9300 AM -10.00 AM",
+            "10.00 AM -10.30 AM",
+            "10.30 AM -11.00 AM"
+        ]
+    },
+    {
+        "_id":3, 
+        "name":"Thorat Orthsome", 
+        "slots":[
+            "8.00 AM -8.30 AM",
+            "8.30 AM -9.00 AM",
+            "9.00 AM -9.30 AM",
+            "9300 AM -10.00 AM",
+            "10.00 AM -10.30 AM",
+            "10.30 AM -11.00 AM"
+        ]
+    },
+    {
+        "_id":4, 
+        "name":"plastic surgery", 
+        "slots":[]
+    },
+    {
+        "_id":5, 
+        "name":"open heart surgary", 
+        "slots":[
+            "8.00 AM -8.30 AM",
+            "8.30 AM -9.00 AM",
+            "9.00 AM -9.30 AM",
+            "9300 AM -10.00 AM",
+            "10.00 AM -10.30 AM",
+            "10.30 AM -11.00 AM"
+        ]
+    },
+    {
+        "_id":6, 
+        "name":"EYE test ", 
+        "slots":[
+            "8.00 AM -8.30 AM",
+            "8.30 AM -9.00 AM",
+            "9.00 AM -9.30 AM",
+            "9300 AM -10.00 AM",
+            "10.00 AM -10.30 AM",
+            "10.30 AM -11.00 AM"
+        ]
+    }
+    
+]
