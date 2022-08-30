@@ -7,7 +7,7 @@ const Appoinmentbanner = ({date}) => {
     const [services,setServices]=useState([]);
     const [bannerdata,setBannerdata]=useState({});
     useEffect(()=>{
-        fetch('services.json')
+        fetch('http://localhost:5000/services')
         .then(res=>res.json())
         .then(data=>setServices(data))
     },[])

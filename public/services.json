@@ -1,6 +1,6 @@
 [
     {
-        "_id":1, 
+         "id":1,
         "name":"Teeth Orthsome", 
         "slots":[
             "8.00 AM -8.30 AM",
@@ -9,7 +9,7 @@
         ]
     },
     {
-        "_id":2, 
+        "id":2,
         "name":"Teeth surgery", 
         "slots":[
             "8.00 AM -8.30 AM",
@@ -17,7 +17,7 @@
         ]
     },
     {
-        "_id":3, 
+        "id":3,
         "name":"Thorat Orthsome", 
         "slots":[
             "8.00 AM -8.30 AM",
@@ -27,12 +27,12 @@
         ]
     },
     {
-        "_id":4, 
+        "id":4,
         "name":"plastic surgery", 
         "slots":[]
     },
     {
-        "_id":5, 
+        "id":5,
         "name":"open heart surgary", 
         "slots":[
             "8.00 AM -8.30 AM",
@@ -41,7 +41,7 @@
         ]
     },
     {
-        "_id":6, 
+        "id":6,
         "name":"EYE test ", 
         "slots":[
             "8.00 AM -8.30 AM",

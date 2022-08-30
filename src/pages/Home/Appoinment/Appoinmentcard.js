@@ -11,9 +11,9 @@ const Appoinmentcard = ({date, setDate}) => {
  
     return (
         <div>
-            <div class="hero min-h-screen bg-base-200">
-  <div class="hero-content flex-col lg:flex-row-reverse">
-    <img src={img} class="max-w-sm rounded-lg shadow-2xl" alt="cavity" />
+            <div className="hero min-h-screen bg-base-200">
+  <div className="hero-content flex-col lg:flex-row-reverse">
+    <img src={img} className="max-w-sm rounded-lg shadow-2xl" alt="cavity" />
     <div>
       
     <DayPicker  mode="single"

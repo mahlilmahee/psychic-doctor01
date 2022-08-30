@@ -3,7 +3,7 @@ import './Backgroundima.css';
 import imam from '../../assets/images/doctor.png'
 const Backgroundima = () => {
     return (
-        <div class="my-20 mx-3 p-6 rounded-lg baby grid grid-cols-1 lg:grid-cols-2 gap-3 items-center  ">
+        <div className="my-20 mx-3 p-6 rounded-lg baby grid grid-cols-1 lg:grid-cols-2 gap-3 items-center  ">
             {/* <h2> Hello it is mahlil mohammed mahee  here </h2> */}
          <div>
          <img style={{marginTop:'-105px'}} class='imagesize' src={imam} width='90%' alt=""/>
