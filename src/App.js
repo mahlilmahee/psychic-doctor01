@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import Login from './pages/Login';
 import Appoinment from './pages/Home/Appoinment/Appoinment';
+import Signup from './pages/Signup';
 // import Appoinment from './pages/Home/Appoinment';
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
       <Route path="/appoinment" element={<Appoinment />}>
        </Route>
       <Route path="/login" element={<Login/>}>
+       </Route>
+      <Route path="/signup" element={<Signup/>}>
        </Route>
       <Route path="*" element={<None />}>
        </Route>
