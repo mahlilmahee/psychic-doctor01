@@ -2,15 +2,32 @@ import React, { useEffect, useState } from 'react';
 import { format } from 'date-fns';                       
 import Service from './Service';
 import Modal from './Modal';
+import Loader from '../Shared/Loader';
+import { useQuery } from 'react-query';
 
 const Appoinmentbanner = ({date}) => {
-    const [services,setServices]=useState([]);
+    // const [services,setServices]=useState([]);
     const [bannerdata,setBannerdata]=useState({});
-    useEffect(()=>{
-        fetch('http://localhost:5000/services')
-        .then(res=>res.json())
-        .then(data=>setServices(data))
-    },[])
+    // console.log(bannerdata,'ami dilam akhon');
+    const formatedDate=format(date, 'PP')
+    // useEffect(()=>{
+    //     fetch(`http://localhost:5000/avaiable?date=${formatedDate}`)
+    //     .then(res=>res.json())
+    //     .then(data=>setServices(data))
+    // },[]);
+
+    const { isLoading,  data : services,refetch} = useQuery(['available',formatedDate], () =>
+    fetch(`http://localhost:5000/avaiable?date=${formatedDate}`).then(res =>
+      res.json()
+    )
+ , {
+    refetchInterval: 100,
+  } )
+
+  if(isLoading){
+    return <Loader></Loader>
+  }
+  
     return (
         <div>
             <p> Avaiable Appoinment on  {format (date, 'PP')}</p>
@@ -20,7 +37,8 @@ const Appoinmentbanner = ({date}) => {
                     services.map(data=><Service id={data._id} setBannerdata={setBannerdata} data={data}></Service>)
                 }
             {
-                bannerdata && <Modal date={date} setBannerdata={setBannerdata} bannerdata={bannerdata}></Modal>
+                // console.log(bannerdata)
+                bannerdata && <Modal date={date} refatch={refetch} setBannerdata={setBannerdata} bannerdata={bannerdata}></Modal>
             }
             </div>
             

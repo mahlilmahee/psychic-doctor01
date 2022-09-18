@@ -11,7 +11,7 @@ const Privateauth = ({children}) => {
     }
     const location=useLocation()
     if(!user){
-        <Navigate to='/login' state={{from:location}}></Navigate>
+       return <Navigate to='/login' state={{from:location}}></Navigate>
     }
     return children;
 };

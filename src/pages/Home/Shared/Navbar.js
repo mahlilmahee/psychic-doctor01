@@ -16,7 +16,7 @@ const Navbar = () => {
       <li><Link to='/reviews'>Reviews</Link></li>
       <li><Link to='contact'>contact us</Link></li>
       <li>{
-        user? <button onClick={logout}>SignOut</button> :<Link to='/login'>Login</Link>
+        user?.email? <button onClick={logout}>SignOut</button> :<Link to='/login'>Login</Link>
         }</li>
     
     </>
@@ -32,7 +32,7 @@ const Navbar = () => {
         {baby}
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">DoctorsHub</a>
+    <a href='/' className="btn btn-ghost normal-case text-xl">DoctorsHub</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal p-0">

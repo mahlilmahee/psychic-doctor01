@@ -1,14 +1,16 @@
 import React from 'react';
 import auth from '../firebase.init';
 import { useForm } from "react-hook-form";
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendEmailVerification, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Loader from './Home/Shared/Loader';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 const Login = () => {
         
     const [signInWithGoogle, user, loading, gError] = useSignInWithGoogle(auth);
-
+    const [sendEmailVerification, sending, eError] = useSendEmailVerification(
+      auth
+    );
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     const navigate = useNavigate();
@@ -25,11 +27,15 @@ const Login = () => {
   ] = useSignInWithEmailAndPassword(auth);
 
 
-  const onSubmit = (data) =>{
+  const onSubmit =async (data) =>{
 
-    console.log(data.mail,data.password)
+    // console.log(data.mail,data.password)
+    
+    
+    signInWithEmailAndPassword(data.mail,data.password);
+    await sendEmailVerification();
+    alert('Sent email');
 
-    signInWithEmailAndPassword(data.mail,data.password)
   };
 
 
@@ -41,14 +47,14 @@ const Login = () => {
 
 
 
-    if (eLoading||loading){
+    if (eLoading||loading||sending){
 
       return <Loader></Loader>
       // console.log('better experience me ')
 
     }
-    if (error|| gError){
-      <p>{error?.message} ||{gError?.message}</p>
+    if (error|| gError||eError){
+     return <p>{error?.message} ||{gError?.message} ||{eError?.message}</p>
     }
     
     return (
@@ -129,7 +135,10 @@ required:
     {/* <span class="label-text-alt">Alt label</span> */}
   </label>
 </div>
-  
+
+{
+  <small> Forget your password ? <Link className='text-secondary' to='/reset'>Reset your password</Link> </small>
+}  
       
       <input class="btn  w-full max-w-xs" type="submit"  value="Log In"/>
     </form>

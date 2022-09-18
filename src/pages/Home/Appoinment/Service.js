@@ -2,6 +2,7 @@ import React from 'react';
 
 const Service = ({data,setBannerdata}) => {
     const {name,slots}=data;
+    // console.log(name,slots,'serviceke bhore dibo')
     return (
         <div className="" >
             <div className="card w-lg bg-base-100 shadow-xl items-center justify-center content-center  ">

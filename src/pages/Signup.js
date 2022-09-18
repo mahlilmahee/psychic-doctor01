@@ -9,7 +9,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const Signup = () => {
 
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-    // const [displayName, setDisplayName] = useState('');
+    const [displayName, setDisplayName] = useState('');
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [updateProfile, updating, uError] = useUpdateProfile(auth);
     const navigate=useNavigate()
@@ -24,33 +24,35 @@ const Signup = () => {
       ] = useCreateUserWithEmailAndPassword(auth);
 
 
-  const onSubmit = async (data) =>{
+  const onSubmit = async ( data) =>{
 
     console.log(data.mail,data.password,data.fname)
 
-    await createUserWithEmailAndPassword(data.mail,data.password);
+    createUserWithEmailAndPassword(data.mail,data.password);
+
     await updateProfile({ displayName:data.fname });
-    navigate('/appoinment');
+    console.log('dekahot to ektu ',user)
+    navigate('/appoinment')
 
   };
 
 
 
 
-    // if(user){
-    //     console.log(user)
-    // }
+    if(user||gUser){
+        console.log(user)
+    }
 
 
 
-    if (loading||gLoading ||updating){
+    if ( loading|| gLoading ||updating){
 
       return <Loader></Loader>
       // console.log('better experience me ')
 
     }
     if (error|| gError ||uError){
-      <p>{error?.message} ||{gError?.message}</p>
+      return <p> {error?.message} ||{gError?.message} ||{uError?.message}</p>
     }
     return (
         <div class='flex justify-center items-center~'>~
@@ -153,7 +155,7 @@ class="input input-bordered w-full max-w-xs"
 <span class="label-text-alt">
   {/* {errors.mail?.type === 'required' && "First name is required"} */}
   {errors.password?.type === 'required' && <p>{errors.password?.message}</p>}
-  {errors.password?.type === 'minlength' && <p>{errors.password?.message}</p>}
+  {errors.password?.type === 'minLength' && <p>{errors.password?.message}</p>}
    </span>
 {/* <span class="label-text-alt">Alt label</span> */}
 </label>
@@ -164,7 +166,7 @@ class="input input-bordered w-full max-w-xs"
 </form>
 <div class="divider">OR</div> 
 
-<small > Already have an account ?<Link className='text-primary' to='/signup'> Sign up here </Link> </small>
+<small > Already have an account ?<Link className='text-primary' to='/login'> Login here </Link> </small>
 <button onClick={() => signInWithGoogle()} class="btn btn-outline btn-accent">Continue with google</button>
 
 </div>
