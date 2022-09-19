@@ -16,6 +16,9 @@ import Privateauth from './pages/Home/Shared/Privateauth';
 import Resetpassword from './pages/Resetpassword';
 import { ToastContainer} from 'react-toastify';
 import { injectStyle } from "react-toastify/dist/inject-style";
+import Dashboard from './pages/Dashboard';
+import MyAppoinment from './MyAppoinment';
+import Review from './Review';
 // import Appoinment from './pages/Home/Appoinment';
 function App() {
   const contextClass = {
@@ -51,6 +54,18 @@ function App() {
        </Route>
       <Route path="/signup" element={<Signup/>}>
        </Route>
+      <Route path="dashboard" element={
+         <Privateauth>
+        <Dashboard/>
+        </Privateauth>
+        }>
+
+<Route index element={<MyAppoinment/>}/>
+<Route path='review' element={<Review/>}/>
+
+       </Route>
+
+     
       <Route path="*" element={<None />}>
        </Route>
      
