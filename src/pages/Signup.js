@@ -6,12 +6,14 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 // import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Loader from './Home/Shared/Loader';
 import { Link, useNavigate } from 'react-router-dom';
+import useToken from '../hooks/useToken';
 const Signup = () => {
 
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [displayName, setDisplayName] = useState('');
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [updateProfile, updating, uError] = useUpdateProfile(auth);
+    
     const navigate=useNavigate()
 
     // section for email and password login here 
@@ -22,26 +24,27 @@ const Signup = () => {
         loading,
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
-
+   
+  const [token]=useToken(gUser||user );
 
   const onSubmit = async ( data) =>{
 
-    console.log(data.mail,data.password,data.fname)
+    // console.log(data.mail,data.password,data.fname)
 
     createUserWithEmailAndPassword(data.mail,data.password);
 
     await updateProfile({ displayName:data.fname });
-    console.log('dekahot to ektu ',user)
-    navigate('/appoinment')
+    // console.log('dekahot to ektu ',user)
+    // navigate('/appoinment')
 
   };
 
 
 
 
-    if(user||gUser){
-        console.log(user)
-    }
+   if(token){
+    navigate('/')
+   }
 
 
 
