@@ -19,8 +19,8 @@ const Dashboard = () => {
         <div>
             <div class="drawer drawer-mobile">
   <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-  <div class="drawer-content flex flex-col items-center justify-center">
-    {/* <!-- Page content here --> */} <h3>Hello </h3>
+  <div class="drawer-content flex flex-col  ">
+    {/* <!-- Page content here --> <h3>Hello </h3> */}
     {/* <h2>{users.length}</h2> */}
     <Outlet/>
     {/* <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label> */}
@@ -29,7 +29,7 @@ const Dashboard = () => {
   </div> 
   <div class="drawer-side">
     <label for="my-drawer-2" class="drawer-overlay"></label> 
-    <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+    <ul class="menu p-4 overflow-y-auto w-40 bg-base-200 justify-center text-base-content">
       {/* <!-- Sidebar content here --> */}
       <li><Link to="/dashboard">Appoinments</Link></li>
       <li><Link to="review">Review</Link></li>

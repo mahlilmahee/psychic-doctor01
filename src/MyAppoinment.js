@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './firebase.init';
-
+import appoinmentcs from './appoinmentcs.css'
 const MyAppoinment = () => {
 
     const [user] = useAuthState(auth);
@@ -17,12 +17,12 @@ const MyAppoinment = () => {
     return (
         <div>
             <h2 className="mb-25">total Appoinment {users.length}</h2>
-               <div class="overflow-x-block m-5 p-4">
-  <table class="table w-full">
+               <div class="tableClass">
+  <table class="table  table-normal w-full">
     {/* <!-- head --> */}
     <thead>
       <tr>
-        <th></th>
+      
         <th>Name</th>
         <th>Date</th>
         <th>Time</th>
@@ -33,9 +33,9 @@ const MyAppoinment = () => {
       {/* <!-- row 1 --> */}
 {
 
-users.map(a => 
+users.map((a,index)=> 
  <tr>
- <th>{a.name}</th>
+ <th> {index+1} . {a.name}</th>
  <td>{a.date}</td>
  <td>{a.appoinmentTime}</td>
  <td>{a.treatment}</td>
