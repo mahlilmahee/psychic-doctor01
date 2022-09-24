@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 // import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
+import auth from '../firebase.init';
+import useAdmin from '../hooks/useAdmin';
 // import auth from '../firebase.init';
 
-const Dashboard = () => {
-//     const [user] = useAuthState(auth);
-// const [users,setUsers]=useState([]);
 
-// useEffect(()=>{
-//    if(user){
-//     fetch(`http://localhost:5000/dashboard?email=${user?.email}`)
-//     .then(res=>res.json())
-//     .then(data=>setUsers(data))
-//    }
-// },[users])
+
+
+
+const Dashboard = () => {
+
+const [user]=useAuthState(auth);
+    const [admin]= useAdmin(user)
 
     return (
         <div>
@@ -33,6 +33,9 @@ const Dashboard = () => {
       {/* <!-- Sidebar content here --> */}
       <li><Link to="/dashboard">Appoinments</Link></li>
       <li><Link to="review">Review</Link></li>
+      {
+        admin &&  <li><Link to="allusers">AllUsers</Link></li>
+      }
       {/* <li><a>Sidebar Item 2</a></li> */}
     </ul>
   

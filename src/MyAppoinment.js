@@ -2,15 +2,28 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './firebase.init';
 import appoinmentcs from './appoinmentcs.css'
+import { useNavigate } from 'react-router-dom';
 const MyAppoinment = () => {
 
     const [user] = useAuthState(auth);
     const [users,setUsers]=useState([]);
+    const navigate=useNavigate()
     
     useEffect(()=>{
        if(user){
-        fetch(`http://localhost:5000/dashboard?email=${user?.email}`)
-        .then(res=>res.json())
+        fetch(`http://localhost:5000/dashboard?email=${user?.email}`,{
+          method:'GET',
+          headers: {'authorization': ` "bearer" ${localStorage.getItem('accessToken')}`}
+
+        })
+        .then(res=>{
+          // console.log('res',res);
+          if(res.status===401 || res.status===403){
+            navigate('/')
+
+          }
+          return res.json()
+        })
         .then(data=>setUsers(data))
        }
     },[users])

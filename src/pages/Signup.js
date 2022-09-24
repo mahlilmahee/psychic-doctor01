@@ -43,7 +43,7 @@ const Signup = () => {
 
 
    if(token){
-    navigate('/')
+    navigate('/appoinment')
    }
 
 

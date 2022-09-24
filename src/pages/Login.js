@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import auth from '../firebase.init';
 import { useForm } from "react-hook-form";
 import { useSendEmailVerification, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Loader from './Home/Shared/Loader';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../hooks/useToken';
 const Login = () => {
         
     const [signInWithGoogle, user, loading, gError] = useSignInWithGoogle(auth);
@@ -15,7 +16,7 @@ const Login = () => {
 
     const navigate = useNavigate();
     const location=useLocation();
-    let from=location.state?.from?.pathname||"/";
+    
 
     // section for email and password login here 
 
@@ -25,8 +26,16 @@ const Login = () => {
     eLoading,
     error,
   ] = useSignInWithEmailAndPassword(auth);
+  const [token]=useToken(user||eUser)
 
+  let from=location.state?.from?.pathname||"/";
+  useEffect(()=>{
+    if(token){
+      navigate(from,{replace:true});
+    }
+  },[token,from,navigate])
 
+  // const [token]=useToken(eUser||user);
   const onSubmit =async (data) =>{
 
     // console.log(data.mail,data.password)
@@ -41,12 +50,15 @@ const Login = () => {
 
 
 
-    if(user||eUser){
-        navigate(from,{replace:true});
-    }
+    // if(user||eUser){
+    //     navigate(from,{replace:true});
+    // }
 
 
-
+      // if(token){
+      //   navigate(from,{replace:true});
+      // }
+    
     if (eLoading||loading||sending){
 
       return <Loader></Loader>
@@ -57,6 +69,8 @@ const Login = () => {
      return <p>{error?.message} ||{gError?.message} ||{eError?.message}</p>
     }
     
+
+
     return (
         <div class='flex justify-center items-center~'>~
             <div class="card w-96 bg-base-100 shadow-xl">

@@ -15,10 +15,11 @@ import Signup from './pages/Signup';
 import Privateauth from './pages/Home/Shared/Privateauth';
 import Resetpassword from './pages/Resetpassword';
 import { ToastContainer} from 'react-toastify';
-import { injectStyle } from "react-toastify/dist/inject-style";
+// import { injectStyle } from "react-toastify/dist/inject-style";
 import Dashboard from './pages/Dashboard';
 import MyAppoinment from './MyAppoinment';
 import Review from './Review';
+import ForAdmin from './pages/ForAdmin';
 // import Appoinment from './pages/Home/Appoinment';
 function App() {
   const contextClass = {
@@ -62,6 +63,7 @@ function App() {
 
 <Route index element={<MyAppoinment/>}/>
 <Route path='review' element={<Review/>}/>
+<Route path='allusers' element={<ForAdmin/>}/>
 
        </Route>
 
