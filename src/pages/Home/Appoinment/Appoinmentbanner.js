@@ -10,6 +10,7 @@ const Appoinmentbanner = ({date}) => {
     const [bannerdata,setBannerdata]=useState({});
     // console.log(bannerdata,'ami dilam akhon');
     const formatedDate=format(date, 'PP')
+    console.log(formatedDate,'ami check kroi')
     // useEffect(()=>{
     //     fetch(`http://localhost:5000/avaiable?date=${formatedDate}`)
     //     .then(res=>res.json())
@@ -21,7 +22,7 @@ const Appoinmentbanner = ({date}) => {
       res.json()
     )
  , {
-    refetchInterval: 100,
+    refetchInterval: 1000,
   } )
 
   if(isLoading){
@@ -34,7 +35,7 @@ const Appoinmentbanner = ({date}) => {
             {/* Here we will show the data of blocks here is it ok  ?? ? */}
             <div class='grid grid-cols-3 gap-5'>
                 {
-                    services.map(data=><Service id={data._id} setBannerdata={setBannerdata} data={data}></Service>)
+                    services?.map(data=><Service id={data._id} setBannerdata={setBannerdata} data={data}></Service>)
                 }
             {
                 // console.log(bannerdata)
