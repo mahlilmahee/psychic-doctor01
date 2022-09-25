@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 const useAdmin=user=>{
  
     const [admin,setAdmin]=useState(false);
+    const [adminLoading,SetAdminLoading]=useState(true)
     useEffect(()=>{
        const email=user?.email;
        if(email){
@@ -17,6 +18,7 @@ const useAdmin=user=>{
     )
     .then(data=>{
         // refetch()
+        SetAdminLoading(false);
         setAdmin(data.admin)
         // console.log(data.admin,'maradi')
         // toast('These users has been made admin by you ')
@@ -25,6 +27,6 @@ const useAdmin=user=>{
     
        }
     },[user])
-return [admin]
+return [admin,adminLoading]
 }
 export default useAdmin;
