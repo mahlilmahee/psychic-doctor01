@@ -8,11 +8,12 @@ import Loader from './Loader';
 const SecureAdminPath = ({children}) => {
     const [user, loading, error] = useAuthState(auth);
     const [admin,adminLoading]=useAdmin(user)
-    if(loading ||adminLoading) {
-        <Loader></Loader>
-    }
     const location=useLocation()
-    if(!user ||admin){
+    if(loading ||adminLoading) {
+       return <Loader></Loader>
+    }
+    // const location=useLocation()
+    if(!user ||!admin){
        return <Navigate to='/login' state={{from:location}}></Navigate>
     }
     return children;

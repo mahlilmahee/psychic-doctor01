@@ -6,6 +6,7 @@ const useAdmin=user=>{
     const [adminLoading,SetAdminLoading]=useState(true)
     useEffect(()=>{
        const email=user?.email;
+       console.log(email,'admin checking email')
        if(email){
         fetch(`http://localhost:5000/admin/${email}`,{
             method:"GET",
@@ -14,12 +15,13 @@ const useAdmin=user=>{
             } 
         }
     )
-    .then(res=> res.json()
-    )
+    .then(res=> res.json())
     .then(data=>{
         // refetch()
         SetAdminLoading(false);
+        // console.log(data.admin,'ki hoise re ')
         setAdmin(data.admin)
+        console.log(admin,'amader admin')
         // console.log(data.admin,'maradi')
         // toast('These users has been made admin by you ')
         // refetch()

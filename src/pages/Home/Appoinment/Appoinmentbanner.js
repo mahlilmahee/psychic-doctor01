@@ -10,7 +10,7 @@ const Appoinmentbanner = ({date}) => {
     const [bannerdata,setBannerdata]=useState({});
     // console.log(bannerdata,'ami dilam akhon');
     const formatedDate=format(date, 'PP')
-    console.log(formatedDate,'ami check kroi')
+    // console.log(formatedDate,'ami check kroi')
     // useEffect(()=>{
     //     fetch(`http://localhost:5000/avaiable?date=${formatedDate}`)
     //     .then(res=>res.json())

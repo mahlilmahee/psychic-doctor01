@@ -34,8 +34,12 @@ const [user]=useAuthState(auth);
       <li><Link to="/dashboard">Appoinments</Link></li>
       <li><Link to="review">Review</Link></li>
       {
-        admin &&  <li><Link to="allusers">AllUsers</Link></li>
+        admin && <> 
+  <li><Link to="allusers">AllUsers</Link></li>
+  <li><Link to="adddoctors">Add Doctors</Link></li>
+        </>
       }
+      {/* <li><Link to="allusers">AllUsers</Link></li> */}
       {/* <li><a>Sidebar Item 2</a></li> */}
     </ul>
   

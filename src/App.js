@@ -21,6 +21,7 @@ import MyAppoinment from './MyAppoinment';
 import Review from './Review';
 import ForAdmin from './pages/ForAdmin';
 import SecureAdminPath from './pages/Home/Shared/SecureAdminPath';
+import AddDoctor from './pages/Home/AddDoctor';
 // import Appoinment from './pages/Home/Appoinment';
 function App() {
   const contextClass = {
@@ -65,6 +66,7 @@ function App() {
 <Route index element={<MyAppoinment/>}/>
 <Route path='review' element={<Review/>}/>
 <Route path='allusers' element={<SecureAdminPath><ForAdmin/></SecureAdminPath>}/>
+<Route path='adddoctors' element={<SecureAdminPath><AddDoctor/></SecureAdminPath>}/>
 
        </Route>
 

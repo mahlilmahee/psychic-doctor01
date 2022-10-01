@@ -1,0 +1,19 @@
+.divdesign{
+    background-color: rgb(187, 208, 247);
+    width: 70%;
+    content-align: center;
+    border: 2px solid rgb(194, 194, 238);
+    margin: 10px auto;
+    border-radius:20px;
+    padding:20px;
+    box-shadow: 10px  10px rgb(180, 179, 179);
+   
+
+
+}
+.inputName{
+    color:Black;
+    font-size: 1.2rem;
+    font-weight: 700;
+
+}
