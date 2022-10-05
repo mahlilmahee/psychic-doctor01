@@ -1,5 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
+import { injectStyle } from "react-toastify/dist/inject-style";
+
 
 const ForUserRow = ({user}) => {
     const {email,role,refetch}=user;
@@ -18,6 +20,7 @@ const ForUserRow = ({user}) => {
     })
     .then(data=>{
         refetch()
+        injectStyle();
         toast('These users has been made admin by you ')
         // refetch()
     })

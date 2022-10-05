@@ -37,6 +37,7 @@ const [user]=useAuthState(auth);
         admin && <> 
   <li><Link to="allusers">AllUsers</Link></li>
   <li><Link to="adddoctors">Add Doctors</Link></li>
+  <li><Link to="manageDoctors">Manage Doc</Link></li>
         </>
       }
       {/* <li><Link to="allusers">AllUsers</Link></li> */}

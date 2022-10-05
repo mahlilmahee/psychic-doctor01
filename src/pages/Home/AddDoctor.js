@@ -3,13 +3,13 @@ import { useForm } from "react-hook-form";
 import { useQuery } from 'react-query';
 import './AddDoctor.css';
 import Loader from './Shared/Loader';
+import { injectStyle } from "react-toastify/dist/inject-style";
 import { toast } from 'react-toastify';
-
 const AddDoctor = () => {
 
 
 
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register,reset, formState: { errors }, handleSubmit } = useForm();
     const { isLoading,  data:services ,refetch} = useQuery('services', () =>
     fetch('http://localhost:5000/services'
     ).then(res =>res.json()))
@@ -50,7 +50,9 @@ fetch(url,{
     .then(res=>res.json())
      .then(inserted=>{
         if(inserted.insertedId){
-            toast.success('added successfully congrates on adding once more doctor on your Business')
+            injectStyle();
+            toast.success('added successfully congrates on adding once more')
+            reset();
         }
         else{
             toast.error('Cannot insert now check the error')

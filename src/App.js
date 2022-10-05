@@ -22,6 +22,7 @@ import Review from './Review';
 import ForAdmin from './pages/ForAdmin';
 import SecureAdminPath from './pages/Home/Shared/SecureAdminPath';
 import AddDoctor from './pages/Home/AddDoctor';
+import ManageDoctor from './pages/Home/ManageDoctor';
 // import Appoinment from './pages/Home/Appoinment';
 function App() {
   const contextClass = {
@@ -67,6 +68,7 @@ function App() {
 <Route path='review' element={<Review/>}/>
 <Route path='allusers' element={<SecureAdminPath><ForAdmin/></SecureAdminPath>}/>
 <Route path='adddoctors' element={<SecureAdminPath><AddDoctor/></SecureAdminPath>}/>
+<Route path='manageDoctors' element={<SecureAdminPath><ManageDoctor/></SecureAdminPath>}/>
 
        </Route>
 
