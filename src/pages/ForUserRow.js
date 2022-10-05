@@ -21,7 +21,7 @@ const ForUserRow = ({user}) => {
     .then(data=>{
         refetch()
         injectStyle();
-        toast('These users has been made admin by you ')
+        toast.success('These users has been made admin by you ')
         // refetch()
     })
     

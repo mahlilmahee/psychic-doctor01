@@ -50,7 +50,7 @@ fetch(url,{
     .then(res=>res.json())
      .then(inserted=>{
         if(inserted.insertedId){
-            injectStyle();
+            // injectStyle();
             toast.success('added successfully congrates on adding once more')
             reset();
         }
