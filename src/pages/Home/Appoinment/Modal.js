@@ -31,7 +31,7 @@ const appoinmentData={
 // making api to send data there 
    
 
-fetch('http://localhost:5000/appoinment',
+fetch('https://doctorsserverdata-production.up.railway.app/appoinment',
 {
   method:'POST',
   headers:{

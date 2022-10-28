@@ -11,7 +11,7 @@ const MyAppoinment = () => {
     
     useEffect(()=>{
        if(user){
-        fetch(`http://localhost:5000/dashboard?email=${user?.email}`,{
+        fetch(`https://doctorsserverdata-production.up.railway.app/dashboard?email=${user?.email}`,{
           method:'GET',
           headers: {'authorization': ` "bearer" ${localStorage.getItem('accessToken')}`}
 

@@ -11,7 +11,7 @@ const AddDoctor = () => {
 
     const { register,reset, formState: { errors }, handleSubmit } = useForm();
     const { isLoading,  data:services ,refetch} = useQuery('services', () =>
-    fetch('http://localhost:5000/services'
+    fetch('https://doctorsserverdata-production.up.railway.app/services'
     ).then(res =>res.json()))
 
 if(isLoading) {
@@ -39,7 +39,7 @@ fetch(url,{
     photo:imageUrl,
     speciality:data.speciality};
 
-    fetch('http://localhost:5000/doctors',{
+    fetch('https://doctorsserverdata-production.up.railway.app/doctors',{
         method:'POST',
         headers:{
             'content-type':'application/json',

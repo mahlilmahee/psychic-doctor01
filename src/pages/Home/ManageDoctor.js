@@ -6,7 +6,7 @@ import Loader from './Shared/Loader';
 const ManageDoctor = () => {
 
     const { isLoading,  data:doctors,refetch} = useQuery('doctors', () =>
-    fetch('http://localhost:5000/getdoctors',{
+    fetch('https://doctorsserverdata-production.up.railway.app/getdoctors',{
         method: 'GET',
         headers:{
             authorization:`"Bearer" ${localStorage.getItem('accessToken')}`

@@ -12,7 +12,7 @@ const DoctorsTable = ({data,refetch}) => {
         
         // e.preventDefault();
    
-        fetch(`http://localhost:5000/deleteDoctors`,{
+        fetch(`https://doctorsserverdata-production.up.railway.app/deleteDoctors`,{
             method:"DELETE",
             headers:{
                 'content-type':'application/json',

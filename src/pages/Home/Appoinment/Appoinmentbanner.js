@@ -12,13 +12,13 @@ const Appoinmentbanner = ({date}) => {
     const formatedDate=format(date, 'PP')
     // console.log(formatedDate,'ami check kroi')
     // useEffect(()=>{
-    //     fetch(`http://localhost:5000/avaiable?date=${formatedDate}`)
+    //     fetch(`https://doctorsserverdata-production.up.railway.app/avaiable?date=${formatedDate}`)
     //     .then(res=>res.json())
     //     .then(data=>setServices(data))
     // },[]);
 
     const { isLoading,  data : services,refetch} = useQuery(['available',formatedDate], () =>
-    fetch(`http://localhost:5000/avaiable?date=${formatedDate}`).then(res =>
+    fetch(`https://doctorsserverdata-production.up.railway.app/avaiable?date=${formatedDate}`).then(res =>
       res.json()
     )
  , {

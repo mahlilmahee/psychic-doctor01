@@ -6,7 +6,7 @@ import { injectStyle } from "react-toastify/dist/inject-style";
 const ForUserRow = ({user}) => {
     const {email,role,refetch}=user;
     const makeAdmin=()=>{
-        fetch(`http://localhost:5000/users/admin/${email}`,{
+        fetch(`https://doctorsserverdata-production.up.railway.app/users/admin/${email}`,{
             method:"PUT",
             headers:{
                 authorization:`"Bearer" ${localStorage.getItem('accessToken')}`

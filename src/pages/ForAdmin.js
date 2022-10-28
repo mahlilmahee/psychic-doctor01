@@ -6,7 +6,7 @@ import Loader from './Home/Shared/Loader';
 const ForAdmin = () => {
     
     const { isLoading,  data:users,refetch} = useQuery('users', () =>
-    fetch('http://localhost:5000/allusers',{
+    fetch('https://doctorsserverdata-production.up.railway.app/allusers',{
         method: 'GET',
         headers:{
             authorization:`"Bearer" ${localStorage.getItem('accessToken')}`

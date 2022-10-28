@@ -11,7 +11,7 @@ const useToken=user=>{
         // console.log('currentUser', currentUser)
 
     if(currentUser.email!==undefined){
-      fetch(`http://localhost:5000/users/${email}`,
+      fetch(`https://doctorsserverdata-production.up.railway.app/users/${email}`,
       {
           method:'PUT',
           headers:{
